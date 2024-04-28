@@ -25,7 +25,7 @@ topic = "test"
 file_path = "amazon.csv"
 df = spark.read.format("csv").option("header", True).load(file_path)
 
-#converting csv file to string
+#converting csv file values to string
 
 string_df = df.select(concat_ws(",", col("marketplace"), col("customer_id"),col("review_id"), col("product_id"),col("product_parent"), col("product_title"),col("product_category"),col("star_rating"), col("helpful_votes"),col("total_votes"),col("vine"),col("verified_purchase"),col("review_headline"),col("review_body"),col("review_date"),col("sentiment")).alias("value"))
 
